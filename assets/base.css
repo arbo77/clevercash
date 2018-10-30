@@ -33,7 +33,7 @@ a{
   height: 401px;
 }
 .logo.small{
-  height: 36px;
+  height: 52px;
   width: auto;
 }
 h1,h2,h3,h4,h5{
@@ -71,7 +71,7 @@ section>div{
 nav a{
   opacity: .9;
   font-size: 14px;
-  font-weight: 900;
+  font-weight: 700;
   margin: 0 15px;
 }
 nav a:first-child{
@@ -80,6 +80,17 @@ nav a:first-child{
 nav a:last-child{
   margin-right: 0;
 }
+header nav:last-child>a:nth-child(2){
+  position: relative;
+}
+header nav:last-child>a:nth-child(2)::before{
+  position: absolute;
+  left:0;
+  top: -18px;
+  content: "Share";
+  font-size: .75em;
+  font-weight: 400;
+} 
 nav a:hover {
   opacity: 1;
 }
@@ -154,6 +165,7 @@ a.btn::after{
 
 section>div h1{
   color: #fdb81b;
+  font-size: 2.5em;
 }
 
 h1{
@@ -207,7 +219,8 @@ h1{
 
 .plegde a.green{
   font-weight: 900;
-  letter-spacing: 1.25px;
+  font-size: 1.25em;
+  letter-spacing: 2px;
   padding: 10px 20px;
   border: none;
   background-color: #15ab6d;
@@ -217,9 +230,9 @@ h1{
 a.green::after{
   background-image: url(./btn-edge-green.png);
   top: -11px;
-  left: -10px;
-  width: 92px;
-  height: 44px;
+  left: -15px;
+  width: 100px;
+  height: 50px;
 }
 
 .single>section>div{
@@ -254,7 +267,7 @@ a.green::after{
 
 .form label{
   color: #15ab6d !important;
-  font-weight: 900;
+  font-weight: 700;
   width: 125px;
   display: inline-block;
   text-align: right;
@@ -295,6 +308,7 @@ a.green::after{
 .thanks h1{
   text-align: center;
   font-size: 24px !important;
+  font-weight: 700 !important;
   color: #ffffff !important;
 }
 .dl .form input {
@@ -315,22 +329,42 @@ a.green::after{
   color: #ffffff;
   font-weight: 900;
   letter-spacing: 1.25px;
-  padding: 10px 20px;
+  padding: 10px 40px;
   border: none;
   background-color: #15ab6d;
   border-top: 2px solid #15ab6d;
   border-bottom: 2px solid #0d5a3b;
+  display: inline-flex;
+  justify-items: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
 }
 .dl .btn::after{
   display: none;
+}
+.dl .icon{
+  width: 24px;
+  margin-left: 10px;
 }
 .icon.large{
   width: 36px;
 }
 .anim{
   height: 40px;
-  display: inline-block;
+  padding: 10px 60px !important;
+  display: inline-block !important;
   position: relative;
+  border: 3px solid #15ab6d !important;
+}
+.anim::before{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border: 3px solid #ffffff;
+  content: "";
 }
 .anim>.dw{
   position: absolute;
@@ -342,9 +376,26 @@ a.green::after{
   0%{top:-10px}
   100%{top:32px}
 }
+@-webkit-keyframes waving{
+  0%{top:-400px; left: -100px; opacity: .35;}
+  100%{top:-300px; left: -300px; opacity: 0;}
+}
 .anim>.dw>img{
   position: absolute;
   top: 0px;
   left: 0;
   -webkit-animation: down 1s infinite;
+}
+.tagline>p{
+  font-weight: 700;
+}
+.dl .btn.anim .icon.large{
+  margin-left: 0;
+}
+.dl .wave{
+  position: absolute;
+  top: -400px;
+  left: -100px;
+  opacity: .25;
+  -webkit-animation: waving 1.5s infinite;
 }
